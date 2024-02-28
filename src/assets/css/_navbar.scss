@@ -1,0 +1,41 @@
+.main-nav{
+    position: relative;
+    
+    .nav-inner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em 0px;
+
+        .head-logo{
+            position: relative;
+            width: 180px;
+            display: inline-block;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .nav-list{
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 0 !important;
+            padding-left: 0 !important;
+
+            li{
+
+                a{
+                    font-weight: 500;
+                    color: #000;
+                }
+            }
+        }
+        .ot-nav{
+            margin-bottom: 0;
+            padding-left: 0 !important;
+        }
+    }
+}

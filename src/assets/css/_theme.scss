@@ -1,0 +1,65 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$main-color: #0F5E9C;
+@font-face {
+    font-family: 'glancyr';
+    src: url('../fonts/Glancyr-Regular.otf');
+}
+@font-face {
+    font-family: 'glancyr-bold';
+    src: url('../fonts/Glancyr-Bold.otf');
+}
+@font-face {
+    font-family: 'glancyr-semibold';
+    src: url('../fonts/Glancyr-SemiBold.otf');
+}
+@font-face {
+    font-family: 'glancyr-medium';
+    src: url('../fonts/Glancyr-Medium.otf');
+}
+
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none !important;
+}
+
+.main-btn{
+    position: relative;
+    padding: 12px 25px;
+    background: linear-gradient(#1684DB, #1466A7);
+    display: inline-block;
+    outline: none;
+    border: none;
+
+    &.center{
+        margin: 0 auto;
+        display: block;
+        max-width: max-content;
+    }
+
+    span{
+        color: white;
+        font-weight: 500;
+    }
+
+    &.white{
+        background: white;
+        
+        span{
+            color: $main-color;
+        }
+    }
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'glancyr', sans-serif;
+
+    span{
+        font-family: 'glancyr', sans-serif;
+    }
+}
