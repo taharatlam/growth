@@ -133,7 +133,7 @@ export default function Home() {
           <div className="row justify-content-center">
             <div className="col-lg-11 col-12">
               <p className="para big-para text-center">
-                Algoquant is your market catalyst in modern trading. We combine technology and financial innovation, using smart algorithms to find hidden opportunities. Experts in low-risk arbitrage and agile high-frequency trading, we're redefining what's possible in finance.
+                Algoquant is your market catalyst in modern trading. We combine technology and financial innovation, using smart algorithms to find hidden opportunities. Experts in low-risk arbitrage and agile high-frequency trading, we&apos;re redefining what&apos;s possible in finance.
               </p>
             </div>
           </div>
@@ -158,7 +158,7 @@ export default function Home() {
                   <h4 className="sub-head sm mt-3">Simplifying Trading through Algorithmic Excellence!</h4>
                   <br />
                   <p className="para">
-                    At Algoquant, we don't just trade – we shape the financial landscape.
+                    At Algoquant, we don&apos;t just trade – we shape the financial landscape.
                   </p>
                 </div>
                 <ul className="tb-list">
@@ -211,7 +211,7 @@ export default function Home() {
                 The <span>Visionaries</span> Shaping <br className='d-none d-sm-block' /> Algorithmic Trading
               </h3>
               <p className="para">
-                Meet the Passionate Minds Propelling Algoquant's Growth Story.
+                Meet the Passionate Minds Propelling Algoquant&apos;s Growth Story.
               </p>
             </div>
           </div>

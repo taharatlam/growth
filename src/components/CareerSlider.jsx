@@ -24,9 +24,9 @@ const CareerSlider = () => {
       }}
       className="banner-swiper">
         {
-          [...Array(5)].map(()=>{
+          [...Array(5)].map((item, index)=>{
             return(
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <div className="ca-slide">
                 <Image src={slide1} alt="" />
               </div>

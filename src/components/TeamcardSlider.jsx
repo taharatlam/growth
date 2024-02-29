@@ -65,9 +65,9 @@ const TeamcardSlider = () => {
             ref={sliderRef}
             >
                 {
-                    [...Array(8)].map(() => {
+                    [...Array(8)].map((item, index) => {
                         return (
-                            <SwiperSlide>
+                            <SwiperSlide key={index}>
                                 <Teamcard />
                             </SwiperSlide>
                         )

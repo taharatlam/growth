@@ -20,7 +20,7 @@ const AboutUs = () => {
                             At Algoquant, we pioneered <span>algorithmic trading</span> since inception. 
                         </h3>
                         <p className="para">
-                            Combining technology and market insight, we revolutionise trading dynamics. Our mantra, "Tech | Trade | Redefined," encapsulates our commitment to cutting-edge simplicity. In a rapidly evolving financial landscape, we stand as an innovative beacon, utilising Machine Learning for enhanced risk control and transformative trading experiences.
+                            Combining technology and market insight, we revolutionise trading dynamics. Our mantra, &quot;Tech | Trade | Redefined,&quot; encapsulates our commitment to cutting-edge simplicity. In a rapidly evolving financial landscape, we stand as an innovative beacon, utilising Machine Learning for enhanced risk control and transformative trading experiences.
                         </p>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ const AboutUs = () => {
                             <Image src={v3} alt="" />
                             <h3>Our Philosophy</h3>
                             <p className="para">
-                                Innovation, Expertise, and Speed drive everything we do. We leverage state-of-the-art technology, embrace quantitative mastery, and prioritise unwavering dedication to our clients’ success.
+                                Innovation, Expertise, and Speed drive everything we do. We leverage state-of-the-art technology, embrace quantitative mastery, and prioritise unwavering dedication to our clients&apos; success.
                             </p>
                         </div>
                     </div>
@@ -76,14 +76,14 @@ const AboutUs = () => {
                             </h3>
                             <h4 className="sub-head">Embracing Sustainable Initiatives for a Planet-friendly Tomorrow.</h4>
                             <p className="para">
-                            At Algoquant, we believe success goes beyond the charts. We're making strides towards a healthier planet because a green future makes for a brighter tomorrow.
+                            At Algoquant, we believe success goes beyond the charts. We&apos;re making strides towards a healthier planet because a green future makes for a brighter tomorrow.
                             </p>
                             <ul className="point-list">
                                 <li>
                                 Illuminating our corporate headquarters with solar energy, expanding to all offices by 2025.
                                 </li>
                                 <li>
-                                We're committed to achieving carbon neutrality across our operations, minimising our environmental impact.
+                                We&apos;re committed to achieving carbon neutrality across our operations, minimising our environmental impact.
                                 </li>
                                 <li>
                                 We support initiatives that promote sustainable practices and empower communities to make a difference.

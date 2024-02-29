@@ -35,9 +35,9 @@ const BannerSlider = () => {
       className="banner-swiper"
       ref={sliderRef}>
         {
-          [...Array(4)].map(()=>{
+          [...Array(4)].map((item, index)=>{
             return(
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <div className="banner-slide">
                   <Image src={slide1} alt=""/>
                   <div className="banner-con">

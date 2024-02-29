@@ -57,9 +57,9 @@ const Newsandinsights = () => {
                     <div className="col-12">
                         <div className="news-grid">
                             {
-                                [...Array(8)].map(function(){
+                                [...Array(8)].map(function(item,index){
                                     return(
-                                        <NewsCard /> 
+                                        <NewsCard key={index} /> 
                                     )
                                 })
                             }

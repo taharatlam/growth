@@ -67,9 +67,9 @@ const Career = () => {
                     <div className="col-12">
                         <div className="job-grid">
                             {
-                                [...Array(8)].map(function(){
+                                [...Array(8)].map(function(item, index){
                                     return(
-                                        <JobCard />
+                                        <JobCard key={index} />
                                     )
                                 })
                             }
