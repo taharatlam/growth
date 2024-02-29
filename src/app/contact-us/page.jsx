@@ -69,7 +69,7 @@ const ContactUs = () => {
                     <div className="row justify-content-center">
                         <div className="col-lg-8 col-12">
                             <p className="para text-center">
-                                No question is too big or small for our team of experts. Whether you're a seasoned investor or just starting out, we're here to provide the guidance and support you need to make informed decisions and build a secure financial future. Contact us now to get started.
+                                No question is too big or small for our team of experts. Whether you&lsquo;re a seasoned investor or just starting out, we&lsquo;re here to provide the guidance and support you need to make informed decisions and build a secure financial future. Contact us now to get started.
                             </p>
                         </div>
                     </div>
@@ -223,9 +223,9 @@ const ContactUs = () => {
                         <div className="col-12">
                             <div className="co-container">
                                 {
-                                    data.map(item => {
+                                    data.map((item, index) => {
                                         return (
-                                            <div className='co-wrap'>
+                                            <div className='co-wrap' key={index}>
                                                 <span>{item}</span>
                                             </div>
                                         )
