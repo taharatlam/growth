@@ -24,7 +24,7 @@ const Footer = () => {
                         Algoquant stands out in Low-risk arbitrage and high-frequency trading in the Global Capital Markets, leveraging technology-driven strategies. 
                     </p>
                 </div>
-                <div className="col-lg-2 offset-lg-2 col-12">
+                <div className="col-lg-2 offset-lg-2 col-6">
                     <div className="ft-col">
                         <h3 className="ft-head">Quick Links</h3>
                         <ul className="ft-list">
@@ -51,7 +51,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-lg-2 col-12">
+                <div className="col-lg-2 col-6">
                     <div className="ft-col">
                         <h3 className="ft-head">Quick Links</h3>
                         <ul className="ft-list">

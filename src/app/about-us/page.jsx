@@ -29,7 +29,7 @@ const AboutUs = () => {
 
         <section className="vs-sec sec pt-0">
             <div className="container">
-                <div className="row">
+                <div className="row row-gap-25">
                     <div className="col-lg-4 col-12">
                         <div className="vs-wrap">
                             <Image src={v1} alt="" />

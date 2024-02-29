@@ -19,9 +19,44 @@ import Teamcard from '@/components/Teamcard';
 import TeamcardSlider from '@/components/TeamcardSlider';
 import CareerSlider from '@/components/CareerSlider';
 
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { useEffect, useState, useRef, useLayoutEffect } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+
+  const scTrigger = useRef(null)
+  const lineEl = useRef(null)
+
+  useLayoutEffect(() => {
+      let ctx = gsap.context(() => {
+      let timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.line-sec',
+          start: "+250px center",
+          end: "bottom center",
+          markers: false,
+          scrub: true
+        },
+        // delay: 0.5
+      });
+
+      // timeline.to('.tb-list li:nth-child(1) span', {
+      //   backgroundColor: '#0F5E9C'
+      // })
+      timeline.to('.line span', {
+        scaleY: '100%'
+      })
+
+    });
+
+    return () => ctx.revert();
+  });
+  
+
   return (
     <main className='home-page'>
       <section className="hm-banner-sec">
@@ -104,7 +139,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="sec no-container">
+      <section className="sec no-container line-sec" ref={scTrigger}>
         <div className="">
           <div className="row">
             <div className="col-lg-5 col-12">
@@ -127,7 +162,7 @@ export default function Home() {
                   </p>
                 </div>
                 <ul className="tb-list">
-                  <div className="line"><span></span></div>
+                  <div className="line"><span ref={lineEl}></span></div>
                   <li>
                     <span></span>
                     <p>Actionable intelligence driven by advanced analytics.</p>

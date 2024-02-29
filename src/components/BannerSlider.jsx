@@ -26,27 +26,33 @@ const BannerSlider = () => {
 
   return (
     <div className='banner-swiper-container'>
-      <Swiper className="banner-swiper" ref={sliderRef}>
-        <SwiperSlide>
-          <div className="banner-slide">
-            <Image src={slide1} alt=""/>
-            <div className="banner-con">
-              <h1>Building Markets Creating Value</h1>
-              <p className="para">A quantitative investment firm forging the future of trading through data-driven strategies and innovative risk management.</p>
-              <Link href="" className="main-btn white-btn">
-                <span>Know More</span>
-              </Link>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+      <Swiper
+      pagination={{
+        clickable: true
+      }
+      }
+      modules={[Pagination]}
+      className="banner-swiper"
+      ref={sliderRef}>
+        {
+          [...Array(4)].map(()=>{
+            return(
+              <SwiperSlide>
+                <div className="banner-slide">
+                  <Image src={slide1} alt=""/>
+                  <div className="banner-con">
+                    <h1>Building Markets Creating Value</h1>
+                    <p className="para">A quantitative investment firm forging the future of trading through data-driven strategies and innovative risk management.</p>
+                    <Link href="" className="main-btn white-btn">
+                      <span>Know More</span>
+                    </Link>
+                  </div>
+                </div>
+              </SwiperSlide>
+            )
+          })
+        }
+        
       </Swiper>
       {/* <div className="banner-nav pt-3 swiper-navigation">
         <button className="prev-arrow" onClick={handlePrev}><Image src={prevNav} alt="" /></button>
