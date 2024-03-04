@@ -11,6 +11,10 @@ import facebookIcon from '../assets/images/facebook.svg';
 import twitterIcon from '../assets/images/twitter.svg';
 import youtubeIcon from '../assets/images/youtube.svg';
 
+import phone from '../assets/images/ft-phone.svg';
+import mail from '../assets/images/ft-mail.svg';
+import loc from '../assets/images/ft-loc.svg';
+
 const Footer = () => {
   return (
     <footer className="main-footer">
@@ -24,7 +28,7 @@ const Footer = () => {
                         Algoquant stands out in Low-risk arbitrage and high-frequency trading in the Global Capital Markets, leveraging technology-driven strategies. 
                     </p>
                 </div>
-                <div className="col-lg-2 offset-lg-2 col-6">
+                <div className="col-lg-2 offset-lg-1 col-6">
                     <div className="ft-col">
                         <h3 className="ft-head">Quick Links</h3>
                         <ul className="ft-list">
@@ -53,55 +57,49 @@ const Footer = () => {
                 </div>
                 <div className="col-lg-2 col-6">
                     <div className="ft-col">
-                        <h3 className="ft-head">Quick Links</h3>
+                        <h3 className="ft-head">Other Links</h3>
                         <ul className="ft-list">
                             <li>
                                 <Link href="">
-                                What We Do
+                                Privacy Policy
                                 </Link>
                             </li>
                             <li>
                                 <Link href="">
-                                Our Team
+                                Terms & Conditions
                                 </Link>
                             </li>
                             <li>
                                 <Link href="">
-                                Careers
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="">
-                                News & Insights
+                                Disclaimer
                                 </Link>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div className="col-lg-2 col-12">
+                <div className="col-lg-3 col-12">
                     <div className="ft-col">
-                        <h3 className="ft-head">Quick Links</h3>
+                        <h3 className="ft-head">Contact Us</h3>
                         <ul className="ft-list">
                             <li>
-                                <Link href="">
-                                What We Do
+                                <Link href="" className='con-loc'>
+                                    <Image src={phone} alt="" />
+                                    <span>91 12345 5632</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="">
-                                Our Team
+                                <Link href="" className='con-loc'>
+                                        <Image src={mail} alt="" />
+                                    <span>info@algoquant.com</span>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="">
-                                Careers
-                                </Link>
+                                <div className='con-loc'>
+                                <Image src={loc} alt="" />
+                                    <span>4/11, Asaf Ali Rd, Chatta lal Miya, Chandni Mahal, Chandni Chowk, New Delhi, Delhi, 110002@a</span>
+                                </div>
                             </li>
-                            <li>
-                                <Link href="">
-                                News & Insights
-                                </Link>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>

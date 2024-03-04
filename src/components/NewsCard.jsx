@@ -7,7 +7,7 @@ import img from '../assets/images/slide1.jpg'
 
 const NewsCard = () => {
   return (
-    <article className='news-card'>
+    <Link href="/news-and-insights/1" className='news-card'>
         <div className="news-img">
             <Image src={img} alt="" />
         </div>
@@ -17,9 +17,9 @@ const NewsCard = () => {
                 <span>Author Name</span>
             </div>
             <h3>Lorem Ipsum is simply dummy text of the printing and...</h3>
-            <Link className='know-more' href="/">Know More</Link>
+            <span className='know-more' href="/">Know More</span>
         </div>
-    </article>
+    </Link>
   )
 }
 

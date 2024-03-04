@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <>
-        <nav class={`main-nav ${isSticky ? 'sticky-menu' : ''}`}>
+        <nav className={`main-nav ${isSticky ? 'sticky-menu' : ''}`}>
             <div className="container">
                 <div className="nav-inner">
                     <div className="l-part">
@@ -43,7 +43,7 @@ const Navbar = () => {
                     <div className="m-part">
                         <ul className="nav-list">
                             <li>
-                                <Link href="about-us">
+                                <Link href="/about-us">
                                 What We Do
                                 </Link>
                             </li>
@@ -53,12 +53,12 @@ const Navbar = () => {
                                 </Link>
                             </li> */}
                             <li>
-                                <Link href="career">
+                                <Link href="/career">
                                     Careers
                                 </Link>
                             </li>
                             <li>
-                                <Link href="news-and-insights">
+                                <Link href="/news-and-insights">
                                     News & Insights
                                 </Link>
                             </li>
@@ -67,7 +67,7 @@ const Navbar = () => {
                     <div className="r-part">
                         <ul className="ot-nav">
                             <li>
-                                <Link href="contact-us" className='main-btn'>
+                                <Link href="/contact-us" className='main-btn'>
                                     <span>Contact Us</span>
                                 </Link>
                             </li>

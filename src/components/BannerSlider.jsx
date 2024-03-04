@@ -5,7 +5,7 @@ import "swiper/css";
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Pagination } from 'swiper/modules';
+import { Pagination,Autoplay } from 'swiper/modules';
 
 import slide1 from '../assets/images/slide1.jpg'
 import nextNav from '../assets/images/next.svg'
@@ -31,7 +31,11 @@ const BannerSlider = () => {
         clickable: true
       }
       }
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
       className="banner-swiper"
       ref={sliderRef}>
         {

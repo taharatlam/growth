@@ -9,6 +9,7 @@ import JobCard from '@/components/JobCard';
 const Career = () => {
   return (
     <>
+
         <InnerHeader title={'Shape the Future of Trading with Us'} image={careerImg} />
 
         <section className="sec">
@@ -16,7 +17,7 @@ const Career = () => {
                 <div className="row justify-content-center">
                     <div className="col-lg-10 text-center col-12">
                         <h3 className="sec-head">
-                        Join a vibrant team defining the next era of <br className='d-sm-block d-none' />market insights and action.
+                        Join a vibrant team defining the next era of <br className='d-sm-block d-none' /><span>market insights and action.</span>
                         </h3>
                         <p className="para mt-3">
                             Become a vital force in a team where ideas spark and innovation flourishes. We challenge the status quo, prioritise your voice, and fuel your growth. This is where market intelligence meets lightning-fast execution and where your contribution builds the trading ecosystem of tomorrow.
@@ -28,7 +29,7 @@ const Career = () => {
                 </div>
             </div>
         </section>
-
+        
         <section className="sec grey-sec">
             <div className="container">
                 <div className="row">

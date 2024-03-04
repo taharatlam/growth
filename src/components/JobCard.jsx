@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const JobCard = () => {
   return (
-    <Link href="" className='job-card'>
+    <Link href="/career/1" className='job-card'>
         <h3>Data Engineer</h3>
         <p className="para">Pune, Maharashtra</p>
         <ul className="att-list">
