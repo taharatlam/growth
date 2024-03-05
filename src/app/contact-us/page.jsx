@@ -12,6 +12,7 @@ import Link from 'next/link';
 import phoneIcon from '../../assets/images/phone-icon.svg';
 import mailIcon from '../../assets/images/mail-icon.svg';
 import locIcon from '../../assets/images/loc-icon.svg';
+import locIcon2 from '../../assets/images/loc2.svg';
 
 
 const ContactUs = () => {
@@ -79,7 +80,7 @@ const ContactUs = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <form onSubmit={formik.handleSubmit} className="con-form">
+                            <form onSubmit={formik.handleSubmit} autocomplete="off" className="con-form">
                                 <div className="row">
                                     <div className="col-lg-6 col-12">
                                         <div className="form-group">
@@ -204,12 +205,12 @@ const ContactUs = () => {
                                 <Image src={mailIcon} alt="" />
                                 <span>info@algoquant.com</span>
                             </Link>
-                            <div className="loc">
+                            <Link href="https://maps.app.goo.gl/aqNJwAVSE2iFaYRz5?g_st=iw" className="loc">
                                 <Image src={locIcon} alt="" />
                                 <span>
                                     4/11, Asaf Ali Rd, Chatta lal Miya, Chandni Mahal, Chandni Chowk, New Delhi, Delhi, 110002
                                 </span>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -226,6 +227,7 @@ const ContactUs = () => {
                                     data.map((item, index) => {
                                         return (
                                             <div className='co-wrap' key={index}>
+                                                <Image src={locIcon2} alt="" />
                                                 <span>{item}</span>
                                             </div>
                                         )

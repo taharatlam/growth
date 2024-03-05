@@ -177,7 +177,7 @@ export default function Home() {
                       <br className="d-none d-sm-block" />
                       <span>Optimised Trading!</span>
                     </h3>
-                    <h4 className="sub-head sm mt-3">Simplifying Trading through Algorithmic Excellence!</h4>
+                    <h4 className="sub-head mt-3">Simplifying Trading through Algorithmic Excellence!</h4>
                     <br />
                     <p className="para">
                       At Algoquant, we don&apos;t just trade – we shape the financial landscape.

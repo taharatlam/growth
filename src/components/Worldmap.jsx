@@ -408,7 +408,7 @@ const Worldmap = () => {
                     </clipPath>
                 </defs>
             </svg>
-            <p>Local Roots  to Global Routes</p>
+            <p>Our Leap into Worldwide Trade.</p>
         </div>
     )
 }

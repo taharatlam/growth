@@ -4,7 +4,7 @@ import React from 'react'
 import Teamcard from './Teamcard';
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import { Navigation } from 'swiper/modules';
 import "swiper/css";
 import { useRef, useCallback, useState, useEffect } from 'react';
@@ -21,6 +21,20 @@ const AboutSlider = () => {
     const [slide, setSlide] = useState(1);
 
     const sliderRef = useRef(null);
+
+    useEffect(() => {
+        const swiperInstance = sliderRef.current.swiper;
+        if (swiperInstance) {
+          swiperInstance.on('slideChange', () => {
+            setSlide(swiperInstance.activeIndex +1 );
+          });
+        }
+        return () => {
+          if (swiperInstance) {
+            swiperInstance.off('slideChange');
+          }
+        };
+      }, [sliderRef]);
 
     const handlePrev = useCallback(() => {
         if (!sliderRef.current) return;
@@ -51,6 +65,11 @@ const AboutSlider = () => {
                                 //     nextEl: navigationNextRef.current,
                                 // }}
                                 className="team-swiper"
+                                modules={[Autoplay]}
+                                autoplay={{
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                  }}
                                 slidesPerView={4}
                                 spaceBetween={0}
                                 breakpoints={{
