@@ -113,15 +113,15 @@ const Career = () => {
                                     <select name=""
                                         onChange={(e)=>{
                                             setSelectedData(state=>{
-                                                return {...state, role:e.target.value}
+                                                return {...state, domain:e.target.value}
                                             })
                                         }}
                                     id="">
                                         <option value="">All Tags</option>
                                         {
-                                            jobs && jobs?.roles.map((role, index)=>{
+                                            jobs && jobs?.domains.map((domain, index)=>{
                                                 return(
-                                                    <option key={index} value={role.role}>{role.role}</option>
+                                                    <option key={index} value={domain.domain}>{domain.domain}</option>
                                                 )
                                             })
                                         }
