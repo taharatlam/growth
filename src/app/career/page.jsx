@@ -117,7 +117,7 @@ const Career = () => {
                                             })
                                         }}
                                     id="">
-                                        <option value="">All Tags</option>
+                                        <option value="">All Domains</option>
                                         {
                                             jobs && jobs?.domains.map((domain, index)=>{
                                                 return(
@@ -135,7 +135,7 @@ const Career = () => {
                                             })
                                         }}
                                         id="">
-                                        <option value="">experiences</option>
+                                        <option value="">Experiences</option>
                                         {
                                             jobs && jobs?.experiences.map((experience, index)=>{
                                                 return(

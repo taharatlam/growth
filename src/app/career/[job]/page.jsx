@@ -47,15 +47,15 @@ const InnerJob = ({params}) => {
         email: Yup.string().email('Invalid email address').required('Email Address is required'),
         phone: Yup.string().required('Phone Number is required'),
         message: Yup.string().required('Message is required'),
-        // resume: Yup.mixed()
-        //     .test('fileSize', 'File size must be 1MB or less', (value) => {
-        //         if (!value) return true;
-        //         return value.size <= 1024 * 1024;
-        //     })
-        //     .test('fileType', 'File must be in PDF format', (value) => {
-        //         if (!value) return true; 
-        //         return value.type === 'application/pdf';
-        //     }),
+        resume: Yup.mixed()
+            .test('fileSize', 'File size must be 1MB or less', (value) => {
+                if (!value) return true;
+                return value.size <= 1024 * 1024;
+            })
+            .test('fileType', 'File must be in PDF format', (value) => {
+                if (!value) return true; 
+                return value.type === 'application/pdf';
+            }).required('Resume is required'),
     });
 
     const onSubmit = async(values, { resetForm }) => {
