@@ -43,7 +43,7 @@ const TeamcardSlider = ({type}) => {
           })
           .catch(error => {
           });
-      }, []);
+      }, [type]);
 
     return (
         <>

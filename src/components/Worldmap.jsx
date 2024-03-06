@@ -18,20 +18,21 @@ const Worldmap = () => {
         });
     };
 
+    const targetRef = useRef(null);
     useEffect(() => {
-        const targetRef = useRef(null);
+        const currentTarget = targetRef.current;
         const options = {
             root: null,
             rootMargin: '0px',
             threshold: 0.5,
         };
         const observer = new IntersectionObserver(handleIntersection, options);
-        if (targetRef.current) {
-            observer.observe(targetRef.current);
+        if (currentTarget) {
+            observer.observe(currentTarget);
         }
         return () => {
-            if (targetRef.current) {
-                observer.unobserve(targetRef.current);
+            if (currentTarget) {
+                observer.unobserve(currentTarget);
             }
         };
     }, []);
