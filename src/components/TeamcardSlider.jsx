@@ -7,16 +7,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from 'swiper/modules';
 import { Navigation } from 'swiper/modules';
 import "swiper/css";
-import { useRef, useCallback } from 'react';
+import { useRef, useCallback, useState, useEffect } from 'react';
+
 
 import Image from 'next/image';
 
 import nextNav from '../assets/images/next.svg'
 import prevNav from '../assets/images/prev.svg'
+import api from '@/helpers/ApibaseUrl';
 
-const TeamcardSlider = () => {
+const TeamcardSlider = ({type}) => {
     const navigationPrevRef = useRef(null)
     const navigationNextRef = useRef(null)
+
+    const [teamMembers, setTeamMembers] = useState(null);
 
     const sliderRef = useRef(null);
     const handlePrev = useCallback(() => {
@@ -29,7 +33,22 @@ const TeamcardSlider = () => {
         sliderRef.current.swiper.slideNext();
     }, []);
 
+
+
+    useEffect(() => {
+        const apiUrl = type == 'leader' ? '/leadership-team':'/management-team'
+        api.get(apiUrl)
+          .then(response => {
+            setTeamMembers(response.data);
+          })
+          .catch(error => {
+          });
+      }, []);
+
     return (
+        <>
+        {
+            teamMembers?
         <div className='team-slider-container'>
             <Swiper
             // navigation={{
@@ -65,10 +84,10 @@ const TeamcardSlider = () => {
             ref={sliderRef}
             >
                 {
-                    [...Array(8)].map((item, index) => {
+                    teamMembers.map((team, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <Teamcard />
+                                <Teamcard data={team} />
                             </SwiperSlide>
                         )
                     })
@@ -78,7 +97,9 @@ const TeamcardSlider = () => {
                 <button className="prev-arrow" onClick={handlePrev}><Image src={prevNav} alt="" /></button>
                 <button className="next-arrow" onClick={handleNext}><Image src={nextNav} alt="" /></button>
             </div>
-        </div>
+        </div>:''
+        }
+        </>
     )
 }
 

@@ -5,18 +5,18 @@ import Link from 'next/link'
 
 import img from '../assets/images/slide1.jpg'
 
-const NewsCard = () => {
+const NewsCard = ({data}) => {
   return (
-    <Link href="/news-and-insights/1" className='news-card'>
+    <Link href={`/news-and-insights/${data.slug}`} className='news-card'>
         <div className="news-img">
             <Image src={img} alt="" />
         </div>
         <div className="news-det">
             <div className="dt">
-                <span>04 Jun 2024</span>
-                <span>Author Name</span>
+                <span>{data.posted}</span>
+                <span>{data.author}</span>
             </div>
-            <h3>Lorem Ipsum is simply dummy text of the printing and...</h3>
+            <h3>{data.title}</h3>
             <span className='know-more' href="/">Know More</span>
         </div>
     </Link>

@@ -20,6 +20,8 @@ import TeamcardSlider from '@/components/TeamcardSlider';
 import CareerSlider from '@/components/CareerSlider';
 import Link from 'next/link';
 
+import Animated from '@/components/Animated';
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -92,15 +94,21 @@ export default function Home() {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8 text-center col-12">
-                <h3 className='sec-head'>Cutting-Edge Tech <br className='d-none d-sm-block' />Built For <span>Speed and Precision</span></h3>
-                  <p className="para">
-                    Experience the edge of possibility with our state-of-the-art hardware, advanced software, and FPGA-powered execution for superior results.
-                  </p>
+                <Animated variant={'fadeUp'}>
+                    <h3 className='sec-head'>Cutting-Edge Tech <br className='d-none d-sm-block' />Built For <span>Speed and Precision</span></h3>
+                </Animated>
+                <Animated variant={'fadeUp'} delay="0.1">
+                      <p className="para">
+                        Experience the edge of possibility with our state-of-the-art hardware, advanced software, and FPGA-powered execution for superior results.
+                      </p>
+                </Animated>
+          
               </div>
             </div>
             <div className="row row-gap-25">
               <div className="col-12">
                 <div className="cc-grid">
+                  <Animated variant={'scale'}>
                   <div className="cc-card">
                     <div className="cc-icon">
                       <Image src={cc1} alt="" />
@@ -112,6 +120,8 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
+                  </Animated>
+                  <Animated variant={'scale'} delay="0.1">
                   <div className="cc-card">
                     <div className="cc-icon">
                       <Image src={cc2} alt="" />
@@ -123,6 +133,8 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
+                  </Animated>
+                  <Animated variant={'scale'} delay="0.2">
                   <div className="cc-card">
                     <div className="cc-icon">
                       <Image src={cc3} alt="" />
@@ -134,6 +146,8 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
+                  </Animated>
+                  <Animated variant={'scale'} delay="0.3">
                   <div className="cc-card">
                     <div className="cc-icon">
                       <Image src={cc4} alt="" />
@@ -145,6 +159,7 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
+                  </Animated>
                 </div>
               </div>
             </div>
@@ -154,9 +169,11 @@ export default function Home() {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-11 col-12">
-                <p className="para big-para text-center">
-                  Algoquant is your market catalyst in modern trading. We combine technology and financial innovation, using smart algorithms to find hidden opportunities. Experts in low-risk arbitrage and agile high-frequency trading, we&apos;re redefining what&apos;s possible in finance.
-                </p>
+                <Animated variant={'fadeUp'}>
+                  <p className="para big-para text-center">
+                    Algoquant is your market catalyst in modern trading. We combine technology and financial innovation, using smart algorithms to find hidden opportunities. Experts in low-risk arbitrage and agile high-frequency trading, we&apos;re redefining what&apos;s possible in finance.
+                  </p>
+                </Animated>
               </div>
             </div>
           </div>
@@ -165,23 +182,31 @@ export default function Home() {
           <div className="">
             <div className="row">
               <div className="col-lg-5 col-12">
-                <div className="se-img">
-                  <Image src={sec41} alt="" />
-                </div>
+                <Animated variant={'fadeLeft'}>
+                  <div className="se-img">
+                    <Image src={sec41} alt="" />
+                  </div>
+                </Animated>
               </div>
               <div className="col-lg-6 offset-lg-1 col-12">
                 <div className="container-right">
                   <div className="se-con">
-                    <h3 className="sec-head">
-                      Algorithmic Insights,
-                      <br className="d-none d-sm-block" />
-                      <span>Optimised Trading!</span>
-                    </h3>
+                    <Animated variant={'fadeUp'}>
+                      <h3 className="sec-head">
+                        Algorithmic Insights,
+                        <br className="d-none d-sm-block" />
+                        <span>Optimised Trading!</span>
+                      </h3>
+                    </Animated>
+                    <Animated variant={'fadeUp'} delay="0.1">
                     <h4 className="sub-head mt-3">Simplifying Trading through Algorithmic Excellence!</h4>
+                    </Animated>
                     <br />
+                    <Animated variant={'fadeUp'} delay="0.2">
                     <p className="para">
                       At Algoquant, we don&apos;t just trade – we shape the financial landscape.
                     </p>
+                    </Animated>
                   </div>
                   <ul className="tb-list">
                     <div className="line"><span ref={lineEl}></span></div>
@@ -212,15 +237,21 @@ export default function Home() {
           <div className="container">
             <div className="row">
               <div className="col-12 text-center">
+              <Animated variant={'fadeUp'}>
                 <h3 className="sec-head">Broadening Horizons, <span>Bridging Markets.</span></h3>
+              </Animated>
               </div>
             </div>
             <div className="row mt-5 align-items-center">
               <div className="col-lg-4 col-12">
-                <Indiamap />
+                {/* <Animated Animated variant={'scale'}> */}
+                  <Indiamap />
+                {/* </Animated> */}
               </div>
               <div className="col-lg-8 col-12">
-                <Worldmap />
+                {/* <Animated Animated variant={'scale'}> */}
+                  <Worldmap />
+                {/* </Animated> */}
               </div>
             </div>
           </div>
@@ -229,31 +260,36 @@ export default function Home() {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8 text-center col-12 mb-2">
-                <h3 className="sec-head">
-                  The <span>Visionaries</span> Shaping <br className='d-none d-sm-block' /> Algorithmic Trading
-                </h3>
-                <p className="para">
-                  Meet the Passionate Minds Propelling Algoquant&apos;s Growth Story.
-                </p>
+          
+                  <h3 className="sec-head">
+                    The <span>Visionaries</span> Shaping <br className='d-none d-sm-block' /> Algorithmic Trading
+                  </h3>
+                
+                  <p className="para">
+                    Meet the Passionate Minds Propelling Algoquant&apos;s Growth Story.
+                  </p>
+           
               </div>
             </div>
           </div>
           <div className="">
             <div className="row justify-content-center">
               <div className="col-12">
-              <Tabs
-                defaultActiveKey="home"
-                id="justify-tab-example"
-                className="mb-3 cc-tabs"
-                justify
-              >
-                <Tab eventKey="home" title="Leadership">
-                  <TeamcardSlider />
-                </Tab>
-                <Tab eventKey="profile" title="Management Team">
-                  Tab content for Profile
-                </Tab>
-              </Tabs>
+              <Animated Animated variant={'fadeUp'} >
+                <Tabs
+                  defaultActiveKey="home"
+                  id="justify-tab-example"
+                  className="mb-3 cc-tabs"
+                  justify
+                >
+                  <Tab eventKey="home" title="Leadership">
+                    <TeamcardSlider type="leader" />
+                  </Tab>
+                  <Tab eventKey="profile" title="Management Team">
+                    <TeamcardSlider type="management" />
+                  </Tab>
+                </Tabs>
+              </Animated>
               </div>
             </div>
           </div>
@@ -264,9 +300,12 @@ export default function Home() {
               <div className="col-12">
                 <div className="ca-grid">
                   <div className="ca-left">
-                    <CareerSlider />
+                    <Animated Animated variant={'fadeLeft'}>
+                      <CareerSlider />
+                    </Animated>
                   </div>
                   <div className="ca-right">
+                    <Animated Animated variant={'fadeRigth'} delay="0.2">
                     <div className="ca-con">
                       <h3 className="sec-head">
                         Forge Your <span>Career Path</span> with Us - Discover Your Potential with Our Team!
@@ -280,6 +319,7 @@ export default function Home() {
                         <span>Start your journey</span>
                       </Link>
                     </div>
+                    </Animated>
                   </div>
                 </div>
               </div>

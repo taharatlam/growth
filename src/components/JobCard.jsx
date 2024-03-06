@@ -2,13 +2,13 @@ import React from 'react'
 
 import Link from 'next/link'
 
-const JobCard = () => {
+const JobCard = ({data}) => {
   return (
-    <Link href="/career/1" className='job-card'>
-        <h3>Data Engineer</h3>
-        <p className="para">Pune, Maharashtra</p>
+    <Link href={`/career/${data?.slug}`} className='job-card'>
+        <h3>{data?.role}</h3>
+        <p className="para">{data?.location}</p>
         <ul className="att-list">
-            <li><span>Exp</span><span>0 - 4 Yrs</span></li>
+            <li><span>Exp</span><span>{data?.experience}</span></li>
         </ul>
         <span className="readmore">Know More</span>
     </Link>
