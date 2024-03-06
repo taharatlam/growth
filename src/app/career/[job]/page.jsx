@@ -24,7 +24,7 @@ const InnerJob = ({params}) => {
         } catch (error) {
           console.error('Error fetching blog data:', error);
         }
-      }, [params.id]); // Dependency array includes params.id
+      }, [params.job]); // Dependency array includes params.id
     
       useEffect(() => {
         fetchCareerData();

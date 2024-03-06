@@ -6,7 +6,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 const Worldmap = () => {
     const [inviewport, setInviewport] = useState(false)
 
-    const targetRef = useRef(null);
+    
 
     const handleIntersection = (entries, observer) => {
         entries.forEach(entry => {
@@ -19,6 +19,7 @@ const Worldmap = () => {
     };
 
     useEffect(() => {
+        const targetRef = useRef(null);
         const options = {
             root: null,
             rootMargin: '0px',
