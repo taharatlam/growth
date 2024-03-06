@@ -1447,3 +1447,13 @@ g.active path {
         }
     }
 }
+.post-msg{
+    background: rgba($color: #fff, $alpha: 0.25);
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 1em 1.5em;
+    text-align: center;
+    margin-top: 1.4em !important;
+    color: white;
+    font-weight: 600;
+}

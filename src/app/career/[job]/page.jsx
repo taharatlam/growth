@@ -16,6 +16,7 @@ import * as Yup from 'yup';
 const InnerJob = ({params}) => {
 
     const [careerData, setCareerData] = useState(null)
+    const [formStatus, setFormStatus] = useState(false)
     console.log('slug', params);
     const fetchCareerData = useCallback(async () => {
         try {
@@ -24,7 +25,7 @@ const InnerJob = ({params}) => {
         } catch (error) {
           console.error('Error fetching blog data:', error);
         }
-      }, [params.job]); // Dependency array includes params.id
+      }, [params.job]);
     
       useEffect(() => {
         fetchCareerData();
@@ -46,21 +47,24 @@ const InnerJob = ({params}) => {
         email: Yup.string().email('Invalid email address').required('Email Address is required'),
         phone: Yup.string().required('Phone Number is required'),
         message: Yup.string().required('Message is required'),
-        resume: Yup.mixed()
-            .test('fileSize', 'File size must be 1MB or less', (value) => {
-                if (!value) return true; // No file provided, skip validation
-                return value.size <= 1024 * 1024; // 1MB
-            })
-            .test('fileType', 'File must be in PDF format', (value) => {
-                if (!value) return true; // No file provided, skip validation
-                return value.type === 'application/pdf';
-            }),
+        // resume: Yup.mixed()
+        //     .test('fileSize', 'File size must be 1MB or less', (value) => {
+        //         if (!value) return true;
+        //         return value.size <= 1024 * 1024;
+        //     })
+        //     .test('fileType', 'File must be in PDF format', (value) => {
+        //         if (!value) return true; 
+        //         return value.type === 'application/pdf';
+        //     }),
     });
 
-    const onSubmit = (values, { resetForm }) => {
-        // You can handle form submission logic here
-        console.log('Form submitted:', values);
-        // Reset the form after successful submission
+    const onSubmit = async(values, { resetForm }) => {
+        var formData = new FormData();
+        Object.keys(values).forEach((key) => {
+            formData.append(key, values[key]);
+        });
+        const response = await api.post(`/career`, formData);
+        setFormStatus(response.status)
         resetForm();
     };
 
@@ -181,7 +185,7 @@ const InnerJob = ({params}) => {
                                                 </label>
                                             </div>
                                         </div>
-                                            {formik.touched.resume && formik.errors.resume && <div>{formik.errors.resume}</div>}
+                                            {formik.touched.resume && formik.errors.resume && <div className="error-text">{formik.errors.resume}</div>}
                                         </div>
                                     </div>
                                     <div className="col-lg-12 col-12">
@@ -209,6 +213,12 @@ const InnerJob = ({params}) => {
                                             <span>Send</span>
                                         </button>
                                     </div>
+                                    {
+                                        formStatus &&
+                                        <div class={`post-msg ${formStatus ? 'success': 'error'}`}>
+                                            Thank you, your application has been submitted
+                                        </div>
+                                    }
                                 </div>
                             </form>
                         </div>
