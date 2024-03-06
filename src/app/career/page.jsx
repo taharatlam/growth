@@ -31,7 +31,7 @@ const Career = () => {
           });
       }, []);
      useEffect(() => {
-        const urlParam = objectToQueryString(selectedData);
+        const urlParam = objectToQueryString(selectedData || {});
         api.get(`/jobs?${urlParam}`)
           .then(response => {
             setJobsData(response.data?.jobs);

@@ -57,7 +57,7 @@ const Newsandinsights = () => {
       };
 
       useEffect(()=>{
-        const param = objectToQueryString(selectedData);
+        const param = objectToQueryString(selectedData || {});
         api.get(`/blogs?${param}`)
         .then(response => {
           setBlogs(response.data);

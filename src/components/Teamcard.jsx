@@ -7,7 +7,7 @@ import img from '../assets/images/slide1.jpg';
 const Teamcard = ({data}) => {
   return (
     <Link href="" className='team-card'>
-        <Image src={img} alt="" />
+        <Image src={data?.image} width={1000} height={1000} alt="" />
         <div className="team-det">
             <span className='design'></span>
             <h3>{data?.name}</h3>

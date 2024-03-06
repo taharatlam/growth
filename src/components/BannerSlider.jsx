@@ -1,5 +1,5 @@
 'use client'
-import React, {useRef, useCallback} from 'react'
+import React, {useRef, useCallback, useState, useEffect} from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from 'next/image';
@@ -11,8 +11,10 @@ import slide1 from '../assets/images/slide1.jpg'
 import nextNav from '../assets/images/next.svg'
 import prevNav from '../assets/images/prev.svg'
 
-const BannerSlider = () => {
+import api from '@/helpers/ApibaseUrl';
 
+const BannerSlider = () => {
+  const [homeBanners, setHomeBanners] = useState(null)
   const sliderRef = useRef(null);
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
@@ -22,6 +24,15 @@ const BannerSlider = () => {
   const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
+  }, []);
+
+  useEffect(() => {
+    api.get('/homebanners')
+      .then(response => {
+        setHomeBanners(response.data);
+      })
+      .catch(error => {
+      });
   }, []);
 
   return (
@@ -39,16 +50,16 @@ const BannerSlider = () => {
       className="banner-swiper"
       ref={sliderRef}>
         {
-          [...Array(4)].map((item, index)=>{
+          homeBanners && homeBanners.map((banner, index)=>{
             return(
               <SwiperSlide key={index}>
                 <div className="banner-slide">
-                  <Image src={slide1} alt=""/>
+                  <Image src={banner?.image} width={1920} height={1080} alt=""/>
                   <div className="banner-con">
-                    <h1>Building Markets Creating Value</h1>
-                    <p className="para">A quantitative investment firm forging the future of trading through data-driven strategies and innovative risk management.</p>
-                    <Link href="" className="main-btn white-btn">
-                      <span>Know More</span>
+                    <h1>{banner?.title}</h1>
+                    <p className="para">{banner?.short_description}</p>
+                    <Link href={banner?.ctl} className="main-btn white-btn">
+                      <span>{banner?.ctb}</span>
                     </Link>
                   </div>
                 </div>

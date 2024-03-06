@@ -20,7 +20,7 @@ const AboutUs = () => {
                     <div className="col-12 text-center">
                         <Animated variant="fadeUp" >
                             <h3 className="sec-head">
-                                At Algoquant, we pioneered <span>algorithmic trading</span> since inception. 
+                                At Algoquant, we have been pioneering <span>algorithmic trading</span> since inception. 
                             </h3>
                         </Animated>
                         <Animated variant="fadeUp" delay="0.1">

@@ -33,22 +33,22 @@ const Footer = () => {
                         <h3 className="ft-head">Quick Links</h3>
                         <ul className="ft-list">
                             <li>
-                                <Link href="">
+                                <Link href="/about-us">
                                 What We Do
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link href="">
                                 Our Team
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
-                                <Link href="">
+                                <Link href="/career">
                                 Careers
                                 </Link>
                             </li>
                             <li>
-                                <Link href="">
+                                <Link href="/news-and-insights">
                                 News & Insights
                                 </Link>
                             </li>

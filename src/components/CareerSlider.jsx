@@ -29,11 +29,7 @@ const CareerSlider = () => {
         {/* {
           [...Array(5)].map((item, index)=>{
             return( */}
-            <SwiperSlide >
-              <div className="ca-slide">
-                <Image src={slide1} alt="" />
-              </div>
-            </SwiperSlide>
+            
             <SwiperSlide >
               <div className="ca-slide">
                 <Image src={slide2} alt="" />
@@ -44,7 +40,11 @@ const CareerSlider = () => {
                 <Image src={slide3} alt="" />
               </div>
             </SwiperSlide>
-
+            <SwiperSlide >
+              <div className="ca-slide">
+                <Image src={slide1} alt="" />
+              </div>
+            </SwiperSlide>
             {/* )
           })
         } */}

@@ -92,6 +92,13 @@
             p {
                 color: white;
             }
+
+            p{
+
+                sm{
+                    font-size: 12px !important;
+                }
+            }
         }
     }
 
@@ -140,7 +147,7 @@
 }
 
 .big-para {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .sub-head {
@@ -255,6 +262,11 @@
         font-weight: 500;
     }
 }
+.world-map p{
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 0.2em;
+}
 
 .map-sec {
     position: relative;
@@ -347,6 +359,7 @@
         left: 0;
         transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     }
+    
 
     .team-det{
         bottom: 0;
@@ -382,6 +395,7 @@
             transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
             opacity: 0;
             transform: translateY(15px);
+            min-height: 147px;
         }
 
         .design{
@@ -740,6 +754,7 @@
         width: 25px;
         height: 20px;
         background: url(../images/down-arrow.svg) center/contain no-repeat;
+        pointer-events: none;
     }
 
     select{
@@ -866,6 +881,7 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 1.5em;
+    justify-content: center;
 
     .co-wrap{
         padding: 15px 20px;
@@ -1351,10 +1367,10 @@ g.active path {
 }
 .world-map.active .path{    
     animation: strokeanim 2.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
-    -webkit-stroke-dashoffset: 600;
-    stroke-dashoffset: 600;
-    -webkit-stroke-dasharray: 600;
-    stroke-dasharray: 600;
+    -webkit-stroke-dashoffset: 800;
+    stroke-dashoffset: 800;
+    -webkit-stroke-dasharray: 800;
+    stroke-dasharray: 800;
 }
 .world-map.active .path1{
     animation-delay: 0.5s !important;
@@ -1420,5 +1436,14 @@ g.active path {
         text-align: center;
         margin-bottom: 0;
         font-family: 'glancyr', sans-serif;
+    }
+}
+.vs-sec{
+
+    .col-lg-4{
+
+        >div{
+            height: 100%;
+        }
     }
 }

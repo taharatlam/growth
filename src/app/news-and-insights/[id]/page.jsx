@@ -3,7 +3,7 @@ import InnerHeader from '@/components/InnerHeader'
 import Image from 'next/image'
 import Link from 'next/link'
 import careerImg from '/src/assets/images/career-banner.jpg';
-import React, { useState, useLayoutEffect, useEffect } from 'react'
+import React, { useState, useLayoutEffect, useEffect, useCallback } from 'react'
 
 import upIcon from '/src/assets/images/upload.svg'
 import removeIcon from '/src/assets/images/cross.svg'
@@ -18,14 +18,28 @@ import slide1 from '/src/assets/images/slide1.jpg'
 gsap.registerPlugin(ScrollTrigger);
 const InnerNews = ({params}) => {
     const [blogData, setBlogData] = useState(null)
-    useEffect(() => {
-        api.get(`/blog?slug=${params.id}`)
-            .then(response => {
-                setBlogData(response.data)
-            })
-            .catch(error => {
-            });
-    }, []);
+    // useEffect(() => {
+    //     api.get(`/blog?slug=${params.id}`)
+    //         .then(response => {
+    //             setBlogData(response.data)
+    //         })
+    //         .catch(error => {
+    //         });
+    // }, []);
+
+    const fetchBlogData = useCallback(async () => {
+        try {
+          const response = await api.get(`/blog?slug=${params.id}`);
+          setBlogData(response.data);
+        } catch (error) {
+          // Handle errors
+          console.error('Error fetching blog data:', error);
+        }
+      }, [params.id]); // Dependency array includes params.id
+    
+      useEffect(() => {
+        fetchBlogData();
+      }, [fetchBlogData]);
     return (
         <div>
             <header className='blog-inner-header'>
@@ -44,7 +58,7 @@ const InnerNews = ({params}) => {
                 <div className="row">
                         <div className="col-12">
                             <div className="blog-inner-img">
-                                <Image src={slide1} alt="" />
+                                <Image src={blogData?.image} width={1920} height={1080} alt="" />
                             </div>
                         </div>
                     </div>

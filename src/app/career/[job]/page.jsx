@@ -3,15 +3,32 @@ import InnerHeader from '@/components/InnerHeader'
 import Image from 'next/image'
 import Link from 'next/link'
 import careerImg from '/src/assets/images/career-banner.jpg';
-import React, { useState } from 'react'
+import React, { useState, useCallback, useEffect  } from 'react'
 
 import upIcon from '/src/assets/images/upload.svg'
 import removeIcon from '/src/assets/images/cross.svg'
 
+import api from '@/helpers/ApibaseUrl';
+
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-const InnerJob = () => {
+const InnerJob = ({params}) => {
+
+    const [careerData, setCareerData] = useState(null)
+    console.log('slug', params);
+    const fetchCareerData = useCallback(async () => {
+        try {
+          const response = await api.get(`/job?slug=${params.job}`);
+          setCareerData(response.data);
+        } catch (error) {
+          console.error('Error fetching blog data:', error);
+        }
+      }, [params.id]); // Dependency array includes params.id
+    
+      useEffect(() => {
+        fetchCareerData();
+      }, [fetchCareerData]);
 
     const [file,setFile] = useState(null)
 
@@ -55,20 +72,16 @@ const InnerJob = () => {
 
     return (
         <div>
-            <InnerHeader title={'Account Manager'} image={careerImg} />
+            <InnerHeader title={careerData?.role} image={careerImg} />
             <section className="job-con-sec sec">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-12">
-                            <p className="para">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id repellat asperiores necessitatibus. Culpa, vitae beatae! Dignissimos facere sit voluptates dolore id eveniet quas sequi voluptatem quo, ullam, corrupti a aut!
-                                <br /><br />
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, omnis facilis, odit autem sapiente velit qui soluta nihil mollitia consectetur deserunt nulla molestias corrupti alias unde similique praesentium quo ipsa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut delectus mollitia nesciunt possimus dolorem est magni obcaecati deserunt saepe ipsam? Deserunt iusto dolore sed consectetur quam, consequatur inventore voluptatibus illum?
-                                <br /><br />
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, omnis facilis, odit autem sapiente velit qui soluta nihil mollitia consectetur deserunt nulla molestias corrupti alias unde similique praesentium quo ipsa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut delectus mollitia nesciunt possimus dolorem est magni obcaecati deserunt saepe ipsam? Deserunt iusto dolore sed consectetur quam, consequatur inventore voluptatibus illum?
-                                <br /><br />
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, omnis facilis, odit autem sapiente velit qui soluta nihil mollitia consectetur deserunt nulla molestias corrupti alias unde similique praesentium quo ipsa.
-                            </p>
+                            {
+                                careerData && (
+                                    <div dangerouslySetInnerHTML={{ __html: careerData.content }} />
+                                )
+                            }
                         </div>
                         <div className="col-lg-6 col-12">
                             <form onSubmit={formik.handleSubmit} className="con-form">

@@ -155,7 +155,7 @@ export default function Home() {
                     <div className="cc-con">
                       <h3>70+</h3>
                       <p className="para">
-                      FPGAs for ultra low latency
+                      Field Programmable Gate Arrays (FPGAs)
                       </p>
                     </div>
                   </div>
@@ -168,10 +168,13 @@ export default function Home() {
         <section className="text-sec pt-0 sec">
           <div className="container">
             <div className="row justify-content-center">
-              <div className="col-lg-11 col-12">
+              <div className="col-lg-12 col-12">
                 <Animated variant={'fadeUp'}>
-                  <p className="para big-para text-center">
+                  {/* <p className="para big-para text-center">
                     Algoquant is your market catalyst in modern trading. We combine technology and financial innovation, using smart algorithms to find hidden opportunities. Experts in low-risk arbitrage and agile high-frequency trading, we&apos;re redefining what&apos;s possible in finance.
+                  </p> */}
+                  <p className="para big-para text-center ">
+                  Algoquant is a pioneering Algorithmic Trading firm, combining technological innovation with financial expertise to uncover untapped opportunities in capital markets. The company's unparalleled domain proficiency in quantitative trading, high-frequency trading (HFT), low-risk arbitrage, mid-frequency trading, and discretionary trading, empowers it to be an industry leader. With over 3% market share in traded volume across Indian markets, Algoquant's smart algorithms and state-of-the-art technology ensure ultra-low latency and lightning-fast execution. Algoquant also enables retail clients to trade and invest through its in-house stock broking platform.
                   </p>
                 </Animated>
               </div>
@@ -242,7 +245,7 @@ export default function Home() {
               </Animated>
               </div>
             </div>
-            <div className="row mt-5 align-items-center">
+            <div className="row mt-5 align-items-end">
               <div className="col-lg-4 col-12">
                 {/* <Animated Animated variant={'scale'}> */}
                   <Indiamap />

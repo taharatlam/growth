@@ -54,11 +54,6 @@ const ContactUs = () => {
         "West Bangal",
         "Gujarat",
         "Uttar Pradesh",
-        "Brazil",
-        "China",
-        "Taiwan",
-        "United States",
-        "hong Kong",
         "Singapore"
     ]
 
