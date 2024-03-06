@@ -432,7 +432,7 @@ const Worldmap = () => {
                             placement="bottom"
                             overlay={<Tooltip className="tooltip" id="button-tooltip-2">China</Tooltip>}
                         >
-                            <circle className='web-dot' className='web-dot' cx="827.28" cy="164.28" r="9.28" fill="#1466A7"></circle>
+                            <circle className='web-dot' cx="827.28" cy="164.28" r="9.28" fill="#1466A7"></circle>
                         </OverlayTrigger>
                         <OverlayTrigger
                             placement="bottom"
@@ -452,14 +452,14 @@ const Worldmap = () => {
                             placement="bottom"
                             overlay={<Tooltip className="tooltip" id="button-tooltip-2">Taiwan</Tooltip>}
                         >
-                            <circle className='web-dot' cx="920.28" cy="217.28" className='web-dot' r="9.28" fill="#1466A7"></circle>
+                            <circle className='web-dot' cx="920.28" cy="217.28"  r="9.28" fill="#1466A7"></circle>
                         </OverlayTrigger>
                         <path stroke="#EE693F" className='path path2' d="M871.5 284.5c62-25.5 159.9-75.9 55.5-73.5m-55.5 73.5C875 176.5 833 19 188 147"></path>
                         <OverlayTrigger
                             placement="bottom"
                             overlay={<Tooltip className="tooltip" id="button-tooltip-2">Hongkong</Tooltip>}
                         >
-                            <circle className='web-dot' cx="891.28" cy="217.28" r="9.28" className='web-dot' fill="#1466A7"></circle>
+                            <circle  cx="891.28" cy="217.28" r="9.28" className='web-dot' fill="#1466A7"></circle>
                         </OverlayTrigger>
                         <OverlayTrigger
                             placement="bottom"
